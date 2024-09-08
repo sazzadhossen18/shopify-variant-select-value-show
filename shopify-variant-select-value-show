@@ -1,0 +1,57 @@
+ <div class="variant-picker-item">                  
+     <div class="variant-picker-label">
+       Color: <span class="fw-6 variant-picker-label-value">
+slected value
+</span>
+      </div>
+<div class="variant-picker-values">
+  <input id="values-beige" type="radio" name="color1" checked>
+  <label class="hover-tooltip radius-60" for="values-beige" data-value="Beige">
+   <span class="btn-checkbox bg-color-beige"></span>
+    <span class="tooltip">Beige</span>
+  </label>                                         
+                                            
+ </div>
+</div>
+</div>
+
+<script>
+       var variant_picker = function () {
+    if ($(".variant-picker-item").length) {
+      $(".variant-picker-item label").on("click", function (e) {
+        $(this)
+          .closest(".variant-picker-item")
+          .find(".variant-picker-label-value")
+          .text($(this).data("value"));
+      });
+    }
+  };
+
+
+ // Dom Ready
+  $(function () {
+   
+    variant_picker();
+   
+  });
+})(jQuery);
+    </script>
+
+
+
+<script>
+  (function () {
+  const radioButtons = document.querySelectorAll(".singleSelectors input[type='radio']");
+  radioButtons.forEach((elt) => {
+    elt.addEventListener("click", (evt) => {
+      console.log(`Radio button clicked: ${evt.target.id}`);
+      document.querySelector("#link-value").innerText = evt.target.value;
+    });
+  });
+})();
+
+</script>
+
+
+
+
